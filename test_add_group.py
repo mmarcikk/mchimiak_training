@@ -3,6 +3,7 @@ from selenium.webdriver.firefox.webdriver import WebDriver
 from selenium.webdriver.common.action_chains import ActionChains
 import time, unittest
 
+
 def is_alert_present(wd):
     try:
         var = wd.switch_to_alert().text
@@ -10,13 +11,12 @@ def is_alert_present(wd):
     except:
         return False
 
+
 class test_add_group(unittest.TestCase):
     def setUp(self):
-        self.wd = WebDriver(capabilities={"marionette": False})
         self.wd = WebDriver(capabilities={"marionette": False},
-            firefox_binary="C:/Program Files/Mozilla Firefox ESR/firefox.exe")
         self.wd.implicitly_wait(60)
-    
+
     def test_test_add_group(self):
         success = True
         wd = self.wd
@@ -42,14 +42,11 @@ class test_add_group(unittest.TestCase):
         wd.find_element_by_name("submit").click()
         wd.find_element_by_link_text("group page").click()
         wd.find_element_by_link_text("Logout").click()
-        wd.find_element_by_name("pass").click()
-        wd.find_element_by_name("pass").send_keys("\\undefined")
-        wd.find_element_by_name("user").click()
-        wd.find_element_by_name("user").send_keys("\\undefined")
         self.assertTrue(success)
-    
+
     def tearDown(self):
         self.wd.quit()
+
 
 if __name__ == '__main__':
     unittest.main()
