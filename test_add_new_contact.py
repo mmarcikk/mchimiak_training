@@ -122,9 +122,9 @@ class test_add_contact(unittest.TestCase):
         self.open_home_page(wd)
         self.logout(wd)
 
-
     def tearDown(self):
         self.wd.quit()
+
 
 if __name__ == '__main__':
     unittest.main()
