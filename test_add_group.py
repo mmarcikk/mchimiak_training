@@ -6,7 +6,7 @@ from group import Group
 
 def is_alert_present(wd):
     try:
-        var = wd.switch_to_alert().text
+        wd.switch_to_alert().text
         return True
     except:
         return False
@@ -15,7 +15,7 @@ def is_alert_present(wd):
 class test_add_group(unittest.TestCase):
     def setUp(self):
         self.wd = WebDriver(capabilities={"marionette": False},
-                            firefox_binary="C:/Program Files/Mozilla Firefox/firefox.exe")
+            firefox_binary="C:/Program Files/Mozilla Firefox/firefox.exe")
         self.wd.implicitly_wait(60)
 
     def open_home_page(self, wd):
