@@ -54,19 +54,36 @@ class ContactHelper:
         self.app.open_home_page()
         self.contact_cache = None
 
-    def delete_first_contact(self):
+    def select_first_contact(self):
         wd = self.app.wd
-        # select first contact
         wd.find_element_by_name("selected[]").click()
+
+    def select_contact_by_index(self, index):
+        wd = self.app.wd
+        wd.find_elements_by_name("selected[]")[index].click()
+
+    def delete_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def delete_contact_by_index(self, index):
+        wd = self.app.wd
+        self.select_contact_by_index(index)
         # contact deletion
         wd.find_element_by_xpath("//input[@value='Delete']").click()
         wd.switch_to.alert.accept()
+        self.return_to_home_page()
         self.contact_cache = None
 
-    def edit_first_contact(self, new_contact_data):
+    def select_editing_contact_by_index(self, index):
         wd = self.app.wd
-        # select first contact
-        wd.find_element_by_xpath("//tbody/tr[2]/td[8]//img").click()
+        wd.find_elements_by_xpath("//tbody/tr[2]/td[8]//img")[index].click()
+
+    def edit_first_contact(self):
+        self.delete_contact_by_index(0)
+
+    def edit_contact_by_index(self, index, new_contact_data):
+        wd = self.app.wd
+        self.select_editing_contact_by_index(index)
         # edit contact
         self.fill_contact_form(new_contact_data)
         if not wd.find_element_by_xpath("//div[@id='content']/form/select[1]//option[10]").is_selected():
@@ -85,6 +102,10 @@ class ContactHelper:
     def count(self):
         wd = self.app.wd
         return len(wd.find_elements_by_name("selected[]"))
+
+    def return_to_home_page(self):
+        wd = self.app.wd
+        wd.find_element_by_link_text("home").click()
 
     contact_cache = None
 
