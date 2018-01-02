@@ -4,10 +4,10 @@ from random import randrange
 
 def test_edit_first_contact_title(app):
     if app.contact.count() == 0:
-        app.contact.create(Contact(title="test"))
+        app.contact.create(Contact(firstname="test"))
     old_contacts = app.contact.get_contact_list()
     index = randrange(len(old_contacts))
-    contact = Contact(title="change")
+    contact = Contact(firstname="change")
     app.contact.edit_contact_by_index(index, contact)
     assert len(old_contacts) == app.contact.count()
     new_contacts = app.contact.get_contact_list()
