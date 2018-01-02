@@ -19,13 +19,13 @@ class Contact:
         self.all_emails_from_home_page = all_emails_from_home_page
 
     def __repr__(self):
-        return "%s:%s" % (self.firstname, self.lastname)
+        return "%s:%s;%s" % (self.id, self.firstname, self.lastname)
 
     def __eq__(self, other):
         return (self.id is None or other.id is None or self.id == other.id) and (self.firstname is None or other.firstname is None or self.firstname == other.firstname) and (self.lastname is None or other.lastname is None or self.lastname == other.lastname)
 
-    def lastname_or_max(self):
-        if self.lastname:
-            return str(self.lastname)
+    def id_or_max(self):
+        if self.id:
+            return int(self.id)
         else:
-            return str(maxsize)
+            return maxsize
