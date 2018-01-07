@@ -83,7 +83,6 @@ class ContactHelper:
         self.app.open_home_page()
         wd.find_element_by_css_selector("a[href*='edit.php?id=%s']" % id).click()
 
-
     def select_view_contact_by_index(self, index):
         wd = self.app.wd
         self.app.open_home_page()
@@ -167,3 +166,55 @@ class ContactHelper:
         work = re.search("W: (.*)", text).group(1)
         phone2 = re.search("P: (.*)", text).group(1)
         return Contact(home=home, mobile=mobile, work=work, phone2=phone2)
+
+    def add_contact_to_group(self, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        # select contact by id
+        self.select_contact_by_id(id)
+        # add contact to group
+        wd.find_element_by_name("to_group").click()
+        wd.find_element_by_css_selector("option[value='%s']" % group.id).click()
+        wd.find_element_by_name("add").click()
+        # go to contact list from added group
+        wd.find_element_by_partial_link_text("group_page").click()
+        self.contact_cache = None
+
+    def delete_contact_from_group(self, group):
+        wd = self.app.wd
+        self.app.open_home_page()
+        # select group
+        wd.find_element_by_name("group").click()
+        wd.find_element_by_css_selector("option[value=\"%s\"]" % group.id).click()
+        # select contact by id
+        self.select_contact_by_id(id)
+        # remove contact from group
+        wd.find_element_by_name("remove").click()
+        # go to contact list from deleted group
+        wd.find_element_by_partial_link_text("group_page").click()
+        self.contact_cache = None
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
