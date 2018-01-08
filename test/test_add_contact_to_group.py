@@ -4,7 +4,7 @@ from model.group import Group
 import random
 
 
-def add_contact_to_group(app, db):
+def test_add_contact_to_group(app, db):
     if len(db.get_contact_list()) == 0:
         app.contact.create(Contact(firstname="test"))
     if len(db.get_group_list()) == 0:
