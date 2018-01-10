@@ -1,0 +1,95 @@
+{
+  "uid" : "dfe6f929f41160c9",
+  "name" : "test_add_group[None:nameja;headerpi8ARJW8F,footerYsVbgqa0K]",
+  "title" : "Test add group [None:nameja;headerpi8ARJW8F,footerYsVbgqa0K]",
+  "time" : {
+    "start" : 1515593447495,
+    "stop" : 1515593452102,
+    "duration" : 4607
+  },
+  "summary" : {
+    "attachments" : 0,
+    "steps" : 3
+  },
+  "failure" : null,
+  "description" : null,
+  "severity" : "NORMAL",
+  "status" : "PASSED",
+  "suite" : {
+    "uid" : "f4619d29839246c1",
+    "name" : "test.test_add_group",
+    "title" : "Test add group"
+  },
+  "steps" : [ {
+    "name" : "Given a group list",
+    "title" : "Given a group list",
+    "time" : {
+      "start" : 1515593447929,
+      "stop" : 1515593447933,
+      "duration" : 4
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "When I add the group None:nameja;headerpi8ARJW8F,footerYsVbgqa0K to the list",
+    "title" : "When I add the group None:nameja;headerpi8ARJW8F,footerYsVbgqa0K to the list",
+    "time" : {
+      "start" : 1515593447933,
+      "stop" : 1515593452096,
+      "duration" : 4163
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  }, {
+    "name" : "Then the new group list is equal to the old list with the added group",
+    "title" : "Then the new group list is equal to the old list with the added group",
+    "time" : {
+      "start" : 1515593452096,
+      "stop" : 1515593452101,
+      "duration" : 5
+    },
+    "summary" : {
+      "attachments" : 0,
+      "steps" : 0
+    },
+    "status" : "PASSED",
+    "attachments" : [ ],
+    "steps" : [ ]
+  } ],
+  "attachments" : [ ],
+  "issues" : [ ],
+  "testIds" : [ ],
+  "labels" : [ {
+    "name" : "thread",
+    "value" : "1400-MainThread"
+  }, {
+    "name" : "host",
+    "value" : "notebook-023"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "suite-title",
+    "value" : null
+  }, {
+    "name" : "severity",
+    "value" : "normal"
+  }, {
+    "name" : "suite-name",
+    "value" : "test.test_add_group"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  } ],
+  "parameters" : [ ]
+}

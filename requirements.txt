@@ -5,3 +5,5 @@ jsonpickle
 pony
 pymysql
 mysql-connector-python-rf
+lxml‑4.1.1‑cp34‑cp34m‑win32.whl
+pytest-allure-adaptor
